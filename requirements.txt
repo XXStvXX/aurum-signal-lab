@@ -1,0 +1,9 @@
+# MVP runtime intentionally uses Python standard library only.
+#
+# Optional future upgrades:
+# gdeltdoc
+# news-please
+# newspaper3k
+# sentence-transformers
+# chromadb
+# xgboost
