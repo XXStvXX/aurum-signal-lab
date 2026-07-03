@@ -1,6 +1,12 @@
 name: Refresh Gold Signal Data
 
 on:
+  push:
+    branches: ["main"]
+    paths:
+      - "data/events/**"
+      - "scripts/**"
+      - ".github/workflows/data-refresh.yml"
   schedule:
     - cron: "17 * * * *"
   workflow_dispatch:
