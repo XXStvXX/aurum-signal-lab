@@ -1,0 +1,174 @@
+[
+  {
+    "event_id": "september-11-attacks-2001",
+    "date": "2001-09-11",
+    "title": "September 11 attacks",
+    "category": "geopolitical_shock",
+    "region": "US",
+    "summary": "Large-scale terrorist attacks in the United States triggered a global risk-off shock.",
+    "expected_gold_channel": ["safe_haven", "risk_aversion"],
+    "source_notes": ["Historical event date is widely documented."]
+  },
+  {
+    "event_id": "iraq-war-start-2003",
+    "date": "2003-03-20",
+    "title": "Iraq War begins",
+    "category": "war",
+    "region": "Middle East",
+    "summary": "US-led invasion of Iraq began, increasing geopolitical uncertainty.",
+    "expected_gold_channel": ["safe_haven", "oil_inflation"]
+  },
+  {
+    "event_id": "lehman-bankruptcy-2008",
+    "date": "2008-09-15",
+    "title": "Lehman Brothers bankruptcy",
+    "category": "financial_crisis",
+    "region": "US",
+    "summary": "Lehman Brothers filed for bankruptcy, escalating the global financial crisis.",
+    "expected_gold_channel": ["safe_haven", "liquidity_stress", "monetary_easing"]
+  },
+  {
+    "event_id": "fed-qe1-announcement-2008",
+    "date": "2008-11-25",
+    "title": "Federal Reserve announces first large-scale asset purchases",
+    "category": "fed_policy",
+    "region": "US",
+    "summary": "The Fed announced large-scale purchases of agency debt and MBS during the crisis.",
+    "expected_gold_channel": ["monetary_easing", "real_yields"]
+  },
+  {
+    "event_id": "eurozone-debt-crisis-2011",
+    "date": "2011-08-08",
+    "title": "Eurozone debt crisis intensifies",
+    "category": "sovereign_debt",
+    "region": "Europe",
+    "summary": "Sovereign debt stress and global equity volatility intensified during August 2011.",
+    "expected_gold_channel": ["safe_haven", "currency_confidence"]
+  },
+  {
+    "event_id": "us-credit-rating-downgrade-2011",
+    "date": "2011-08-05",
+    "title": "S&P downgrades US sovereign credit rating",
+    "category": "sovereign_debt",
+    "region": "US",
+    "summary": "S&P downgraded the United States sovereign rating from AAA amid debt-ceiling stress.",
+    "expected_gold_channel": ["currency_confidence", "safe_haven"]
+  },
+  {
+    "event_id": "taper-tantrum-fomc-2013",
+    "date": "2013-06-19",
+    "title": "FOMC taper-tantrum shock",
+    "category": "fed_policy",
+    "region": "US",
+    "summary": "Fed communication around reducing asset purchases contributed to higher yields and dollar pressure on gold.",
+    "expected_gold_channel": ["real_yields", "usd_strength"]
+  },
+  {
+    "event_id": "crimea-annexation-2014",
+    "date": "2014-03-18",
+    "title": "Russia annexes Crimea",
+    "category": "geopolitical_shock",
+    "region": "Eastern Europe",
+    "summary": "Russia annexed Crimea following a disputed referendum, increasing geopolitical risk.",
+    "expected_gold_channel": ["safe_haven", "sanctions_risk"]
+  },
+  {
+    "event_id": "fed-first-rate-hike-2015",
+    "date": "2015-12-16",
+    "title": "Federal Reserve raises rates for first time since financial crisis",
+    "category": "fed_policy",
+    "region": "US",
+    "summary": "The Fed began policy normalization after the zero-rate period.",
+    "expected_gold_channel": ["real_yields", "usd_strength"]
+  },
+  {
+    "event_id": "brexit-referendum-2016",
+    "date": "2016-06-24",
+    "title": "Brexit referendum result",
+    "category": "political_shock",
+    "region": "UK",
+    "summary": "The UK voted to leave the European Union, causing a sharp risk-off move.",
+    "expected_gold_channel": ["safe_haven", "currency_volatility"]
+  },
+  {
+    "event_id": "fed-december-hike-risk-off-2018",
+    "date": "2018-12-19",
+    "title": "Fed hikes amid late-2018 market stress",
+    "category": "fed_policy",
+    "region": "US",
+    "summary": "The Fed raised rates while markets were under stress, highlighting tension between policy and risk assets.",
+    "expected_gold_channel": ["real_yields", "risk_aversion"]
+  },
+  {
+    "event_id": "covid-fed-emergency-cut-2020",
+    "date": "2020-03-03",
+    "title": "Fed emergency rate cut during COVID shock",
+    "category": "fed_policy",
+    "region": "US",
+    "summary": "The Fed delivered an emergency rate cut as COVID-related market stress accelerated.",
+    "expected_gold_channel": ["monetary_easing", "safe_haven"]
+  },
+  {
+    "event_id": "covid-global-market-crash-2020",
+    "date": "2020-03-16",
+    "title": "COVID global market crash and liquidity shock",
+    "category": "financial_crisis",
+    "region": "Global",
+    "summary": "Global markets experienced severe stress and forced liquidation during the COVID shock.",
+    "expected_gold_channel": ["liquidity_stress", "safe_haven", "monetary_easing"]
+  },
+  {
+    "event_id": "russia-ukraine-invasion-2022",
+    "date": "2022-02-24",
+    "title": "Russia invades Ukraine",
+    "category": "war",
+    "region": "Eastern Europe",
+    "summary": "Russia launched a full-scale invasion of Ukraine, causing a major geopolitical shock.",
+    "expected_gold_channel": ["safe_haven", "energy_inflation", "sanctions_risk"]
+  },
+  {
+    "event_id": "fed-hiking-cycle-start-2022",
+    "date": "2022-03-16",
+    "title": "Fed begins 2022 hiking cycle",
+    "category": "fed_policy",
+    "region": "US",
+    "summary": "The Fed began a rapid tightening cycle to fight inflation.",
+    "expected_gold_channel": ["real_yields", "usd_strength"]
+  },
+  {
+    "event_id": "fed-75bp-hike-2022",
+    "date": "2022-06-15",
+    "title": "Fed delivers 75 bp rate hike",
+    "category": "fed_policy",
+    "region": "US",
+    "summary": "The Fed delivered its largest rate hike in decades as inflation pressures persisted.",
+    "expected_gold_channel": ["real_yields", "usd_strength"]
+  },
+  {
+    "event_id": "svb-collapse-2023",
+    "date": "2023-03-10",
+    "title": "Silicon Valley Bank collapse",
+    "category": "banking_crisis",
+    "region": "US",
+    "summary": "Silicon Valley Bank failed, triggering stress across US regional banks.",
+    "expected_gold_channel": ["safe_haven", "rate_cut_expectations", "financial_stability"]
+  },
+  {
+    "event_id": "hamas-israel-war-2023",
+    "date": "2023-10-07",
+    "title": "Hamas attacks Israel; Israel-Hamas war begins",
+    "category": "war",
+    "region": "Middle East",
+    "summary": "A major attack on Israel triggered war and renewed Middle East risk.",
+    "expected_gold_channel": ["safe_haven", "oil_inflation"]
+  },
+  {
+    "event_id": "iran-israel-direct-attack-2024",
+    "date": "2024-04-13",
+    "title": "Iran launches direct attack on Israel",
+    "category": "war",
+    "region": "Middle East",
+    "summary": "Iran launched drones and missiles toward Israel, raising escalation risk.",
+    "expected_gold_channel": ["safe_haven", "oil_inflation", "tail_risk"]
+  }
+]
