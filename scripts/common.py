@@ -25,7 +25,10 @@ def read_json(path: Path) -> Any:
 def write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as handle:
-        json.dump(payload, handle, ensure_ascii=False, indent=2, sort_keys=True)
+        if PUBLIC_DATA in path.parents:
+            json.dump(payload, handle, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
+        else:
+            json.dump(payload, handle, ensure_ascii=False, indent=2, sort_keys=True)
         handle.write("\n")
 
 
