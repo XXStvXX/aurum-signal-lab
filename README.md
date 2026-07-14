@@ -1,29 +1,72 @@
 # Aurum Signal Lab
 
-Gold news-event signal research platform for GitHub Pages.
+A research prototype for studying how major news events relate to gold returns across short, medium, and long horizons.
 
-This project studies how major news events affect gold across short, medium, and long horizons. It is designed around four layers:
+- [Live dashboard](https://xxstvxx.github.io/aurum-signal-lab/)
+- [Repository](https://github.com/XXStvXX/aurum-signal-lab)
 
-1. Historical event library
-2. Event-study engine for before/after gold returns
-3. Live news signal extraction from public news feeds
-4. Similar-event retrieval and model-ready prediction features
+The project connects four layers:
 
-The first version is intentionally lightweight. It runs with Python's standard library, stores generated data as JSON, and serves a static dashboard from `public/`.
+1. a curated historical event library
+2. an event-study engine for before/after gold returns
+3. public-news signal extraction
+4. similar-event retrieval for research context
+
+It is designed as an explainable portfolio project, not a trading system. The dashboard makes data provenance and offline fallback states visible so a reviewer can distinguish live inputs from demonstration data.
+
+## What the Dashboard Shows
+
+- Historical gold-relevant events grouped by category
+- Event windows from `T-30` through `T+180`
+- Live or fallback news signals with category and directional labels
+- Similar historical events based on token overlap
+- Average post-event returns across multiple horizons
+- Refresh status and data-source state
+
+## Live Demo Notes
+
+The GitHub Pages dashboard is intentionally static and lightweight. Generated JSON is served from `public/`, so no backend is required.
+
+When external feeds are unavailable, the pipeline uses deterministic offline fallback data. The dashboard labels that state explicitly. Fallback results demonstrate the workflow and interface; they should not be interpreted as current market signals.
+
+## Methodology
+
+### Event study
+
+For each curated event, the pipeline compares gold prices around the event date using these windows:
+
+`T-30`, `T-7`, `T`, `T+1`, `T+3`, `T+7`, `T+30`, `T+90`, and `T+180`.
+
+Returns are descriptive historical observations. They do not establish that the event caused the price movement.
+
+### News classification
+
+Public news records are categorized with transparent rules for themes such as:
+
+- Federal Reserve policy
+- war and geopolitical shocks
+- banking or liquidity stress
+- sovereign debt
+- inflation and macroeconomic releases
+
+### Similar-event retrieval
+
+The MVP ranks historical analogues using token overlap. This is deliberately interpretable, but limited: shared words do not guarantee equivalent economic conditions.
 
 ## Current MVP
 
-- Curated seed library of gold-relevant historical events
-- Event windows: `T-30`, `T-7`, `T`, `T+1`, `T+3`, `T+7`, `T+30`, `T+90`, `T+180`
-- Live GDELT news fetch with rule-based event classification
+- Curated seed library of 19 gold-relevant historical events
+- Event-study generation across nine time windows
+- GDELT news fetch with rule-based classification
 - Similar-event matching based on token overlap
-- GitHub Actions workflow for scheduled data refresh
-- GitHub Pages workflow for static deployment
-- Attribution notes for all project inspirations
+- Static GitHub Pages dashboard
+- Scheduled GitHub Actions data refresh
+- Deterministic fallback data for offline testing
+- Source and inspiration notes in [`ATTRIBUTION.md`](ATTRIBUTION.md)
 
 ## Run Locally
 
-Generate data:
+Generate the project data:
 
 ```bash
 python3 scripts/event_study.py
@@ -31,35 +74,61 @@ python3 scripts/signal_pipeline.py
 python3 scripts/similarity.py
 ```
 
-Open:
+Then open:
 
 ```text
 public/index.html
 ```
 
-No build step is required.
+No package installation or build step is required for the current standard-library MVP.
 
-## GitHub Deployment
+## Repository Structure
 
-1. Push these files to a GitHub repository.
-2. In repository settings, enable GitHub Pages with GitHub Actions as the source.
-3. The `pages.yml` workflow deploys `public/`.
-4. The `data-refresh.yml` workflow refreshes JSON data on a schedule.
+```text
+.
+├── data/                  # Curated inputs and generated research data
+├── public/                # Static dashboard and generated JSON
+├── scripts/
+│   ├── event_study.py     # Historical return-window generation
+│   ├── signal_pipeline.py # News collection and classification
+│   └── similarity.py      # Historical analogue matching
+├── .github/workflows/     # Pages deployment and scheduled refresh
+└── ATTRIBUTION.md         # Data-source and inspiration notes
+```
 
 ## Data Sources
 
 The MVP uses:
 
 - GDELT 2.0 Doc API for public news discovery
-- Stooq daily CSV endpoint as a best-effort free gold price source
-- Local deterministic fallback data so the dashboard remains testable offline
+- Stooq daily CSV endpoint as a best-effort free gold-price source
+- local deterministic fallback data so the dashboard remains testable offline
 
-For production, replace or supplement with licensed gold spot, futures, real-yield, DXY, VIX, and rates data.
+A production-grade version would require licensed, quality-controlled market data and additional explanatory variables such as real yields, DXY, VIX, rates, and liquidity conditions.
 
-## Important
+## AI-Assisted Workflow
 
-This is a research tool, not investment advice. The outputs are probabilistic research signals and historical analogies, not guaranteed forecasts.
+AI supported requirements clarification, implementation planning, documentation, and iterative debugging. Final scope decisions, source selection, interpretation, limitation statements, and published claims are reviewed by the project owner.
 
-## Sources And Inspirations
+This is a human-in-the-loop research workflow: AI accelerates delivery, while responsibility for validation and communication remains with the human operator.
 
-See `ATTRIBUTION.md`.
+## Limitations
+
+- The historical event library is curated and small.
+- Token overlap is a baseline similarity method, not semantic or causal matching.
+- Event windows may contain many overlapping market drivers.
+- Free public endpoints can be delayed, unavailable, or revised.
+- Offline fallback data is for interface and pipeline testing only.
+- Historical analogues do not predict future returns.
+
+## Roadmap
+
+- Validate event dates and price observations with stronger source controls
+- Add real-yield, DXY, VIX, and rate-change context
+- Replace token overlap with an evaluated semantic-retrieval baseline
+- Add automated data-quality checks and test coverage
+- Separate live, stale, and fallback data more prominently in generated outputs
+
+## Disclaimer
+
+This project is for education and research. It is not investment advice, and its outputs are not trading recommendations.
